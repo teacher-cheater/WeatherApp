@@ -1,0 +1,102 @@
+body{
+   background: linear-gradient(150.64deg, #8E2DE2 0%, #4A00E0 100%);
+   display: flex;
+   flex-direction: column;
+}
+
+.header {
+
+}
+.header__title {
+   text-align: center;
+   padding: 40px;
+   font-weight: 300;
+   font-size: 28px;
+   line-height: 1.2;
+   color: rgba(255, 255, 255, 0.5);
+   margin-bottom: 344px;
+}  
+.main {
+   /*margin: 0 auto;*/
+   text-align: center;
+   font-weight: 400;
+   color: #FFFFFF;
+}
+.main__wrapper {
+}
+.main__find {
+   max-width: 200px;
+   margin: 0 auto;
+}
+.main__city-here {
+   border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+   font-size: 20px;
+   line-height: 1.8;
+   color: rgba(255, 255, 255, 0.7);
+   margin-bottom: 40px;
+   
+}
+.main__weather {
+
+}
+.main__degrees {
+   font-weight: 700;
+   font-size: 72px;
+   line-height: 1.2;
+   font-weight: 700;
+}
+.main__city {
+   font-size: 24px;
+   line-height: 1.5;
+   color: rgba(255, 255, 255, 0.8);
+   margin-bottom: 36px;
+
+}
+
+.main__error {
+}
+.main__oops {
+   font-size: 20px;
+   line-height: 1.8;
+}
+.main__text {
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 1.25;
+   text-align: center;
+   color: rgba(255, 255, 255, 0.75);
+   margin-bottom: 70px;
+}
+.footer {
+   margin: 0 auto;
+   font-weight: 400;
+   font-size: 21px;
+   line-height: 1.71;
+   color: rgba(255, 255, 255, 0.5);
+   padding: 40px 0;
+}
+/* buttons */
+.main__find{
+
+}
+.main__change{
+   font-size: 17px;
+   line-height: 1.65;
+   text-decoration-line: underline;
+   color: rgba(255, 255, 255, 0.5);
+   background: inherit;
+   cursor: pointer;
+}
+.main__try{
+
+}
+/* общий стиль кнопок */
+.btn{
+   background: #FFFFFF;
+   border-radius: 8px;
+   font-size: 20px;
+   line-height: 1.8;
+   color: #4C01E0;
+   padding: 7px 50px;
+   cursor: pointer;
+}
