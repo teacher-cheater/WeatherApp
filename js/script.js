@@ -1,61 +1,99 @@
-//b0709254826c4061a0d60560ef431ccd
 
-//console.log(b0709254826c4061a0d60560ef431ccd)
-//Geolocation.getCurrentPosition('b0709254826c4061a0d60560ef431ccd')
-//let url = 'https://openweathermap.org/api/one-call-api'
-//let response = fetch(url);
+//запрос у пользователя на определение местоположения
+if (navigator.geolocation) {
+   navigator.geolocation.getCurrentPosition(
+      function (position) {
+         let latPos = position.coords.latitude
+         let lonPos = position.coords.longitude
+         getGeoPositionCity(latPos, lonPos)
+      },
+      function (error) {
+         //здесь должно открываться окно браузера с просьбой разрешить определение местоположения  
+         getCityByIp()
+            .then((regionCity) => {
+               console.log(regionCity)
+               getWeatherByCity(regionCity)//вызвали фукнцию и передали город
+                  .then((f) => {
+                     console.log(f)
+                  })
+            })
+      }
+   );
+}
 
-//const latSpb = 59.9266286
-//const lonSpb = 30.3447391
+//navigator.geolocation.getCurrentPosition((data) => getGeo(data.coords.latitude, data.coords.longitude))
 
-navigator.geolocation.getCurrentPosition((data) => getGeo(data.coords.latitude, data.coords.longitude))
-
-
-//https://api.openweathermap.org/data/2.5/onecall?lat={59.9266286}&lon={30.3447391}&appid={b0709254826c4061a0d60560ef431ccd}
-
-async function getGeo(lat, lon) {//получили данные через переменные из getCurrentPosition
-   await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=33f3d3d2d94895db4810b85a8b2dabbf`)
+async function getGeoPositionCity(lat, lon) {//получили данные через переменные из getCurrentPosition
+   await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=b4916a6763c5e891c385a81e2e8bfd91`)//ширина, долгота
       .then((resp) => resp.json())
       .then((data) => {
-         console.log(data)
-         let temperature = data.current.temp
-         let tempWeather = data.current.weather[0].description
-         let ttt = Math.round(temperature - 273) + '℃'
-         drawBlock(ttt, tempWeather)
+         const mainIcon = `<img src="https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png">`
+         const temperature = data.current.temp
+         const descriptionWeather = data.current.weather[0].description
+         const degrees = Math.round(temperature - 273) + '℃'
+         drawBlockWeather(degrees, descriptionWeather, mainIcon)
       })
 }
 
-//async function getCity() { //???where is city?
-//   await fetch(``)
-//}
+//найти город
+async function getWeatherByCity(city) {
+   return await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b4916a6763c5e891c385a81e2e8bfd91`)
+      .then((resp) => resp.json())
+      .then((data) => {
+         return data
+      })
+}
 
-function drawBlock(temper, city) {
-   let titleH2 = document.createElement('h2')
-   titleH2.classList = 'main__degrees'
+async function getCityByIp() {
+   return await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_k1srgs6BSmRfRRrcJY60twztQ7Vt6`)
+      .then((resp) => resp.json())
+      .then((data) => {
+         return data.location.region
+      })
+}
+//document.querySelector('.main__change').addEventListener('click', () => { console.log('hh') })//кнопка для смены города
+
+
+function drawBlockWeather(temper, description, img, city) {
+   //секция main__weather 
+   let titleH2 = document.createElement('h2')//создание и вывод темпертуры
+   titleH2.classList = 'main__description'
    titleH2.textContent = temper
-   let div = document.createElement('div')
-   div.classList = 'main__city'
+   let divCity = document.createElement('div')//создание и вывод города
+   divCity.classList = 'main__city'
+   let divDegrees = document.createElement('div')//создание и вывод temp
+   divDegrees.classList = 'main__degrees'
 
-   document.querySelector('.main__weather').prepend(div)
+   let imgWeather = document.createElement('div')//создание и вывод картинки погоды
+   imgWeather.classList = 'main__icon'
+   let btnChange = document.createElement('button')
+   btnChange.classList = 'main__change'
+   btnChange.textContent = 'Change city'
+   //добавление в DOM
+   document.querySelector('.main__weather').prepend(divCity)
+   document.querySelector('.main__weather').prepend(divDegrees)
    document.querySelector('.main__weather').prepend(titleH2)
+   document.querySelector('.main__weather').prepend(imgWeather)
+   document.querySelector('.main__weather').append(btnChange)
 
+   //
    document.querySelector('.main__degrees').textContent = temper
    document.querySelector('.main__city').textContent = city
-
+   document.querySelector('.main__icon').innerHTML = img
+   document.querySelector('.main__description').textContent = description
+   document.querySelector('.main__')
+   //секция main__find
+   let inptTypeHere = document.createElement('input')
+   inptTypeHere.classList = 'main__input'
+   //добавление в DOM
+   document.querySelector('.main__find').prepend(inptTypeHere)
 }
-//drawBlock()
 
-//33f3d3d2d94895db4810b85a8b2dabbf
-//navigator.geolocation.getCurrentPosition(position => {
-//   console.log(position.coords.latitude)
-//   console.log(position.coords.longitude)
-//})
 
-//const id = navigator.geolocation.watchPosition(position => {
-//   console.log(position)
-//})
+function redrawingBlock(city) {
 
-////stop watching after 10 seconds
-//setTimeout(() => {
-//   navigator.geolocation.clearWatch(id)
-//}, 10 * 1000)
+   //weather[0].description.icon
+   //weather[0].description
+}
+
+

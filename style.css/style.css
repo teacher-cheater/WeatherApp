@@ -39,18 +39,17 @@ body{
 .main__weather {
 
 }
-.main__degrees {
+.main__city {
    font-weight: 700;
    font-size: 72px;
    line-height: 1.2;
    font-weight: 700;
 }
-.main__city {
-   font-size: 24px;
+.main__description {
+   font-size: 30px;
    line-height: 1.5;
    color: rgba(255, 255, 255, 0.8);
    margin-bottom: 36px;
-
 }
 
 .main__error {
