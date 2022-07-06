@@ -39,19 +39,34 @@ body{
 .main__weather {
 
 }
-.main__city {
+
+/* стили городов */
+.main__city, .main__re-name {
    font-weight: 700;
    font-size: 72px;
    line-height: 1.2;
    font-weight: 700;
 }
-.main__description {
-   font-size: 30px;
+
+/* стили вывода описания погоды */
+.main__description,.main__re-description {
+   text-transform: uppercase;
+   font-size: 34px;
    line-height: 1.5;
    color: rgba(255, 255, 255, 0.8);
    margin-bottom: 36px;
 }
 
+/* стили вывода погоды в градусах */
+.main__re-temp, .main__degrees{
+   font-weight: 700;
+   font-size: 72px;
+   line-height: 1.2;
+   color: #FFFFFF;
+}
+.main__re-icon{
+   font-size: 40px;
+}
 .main__error {
 }
 .main__oops {

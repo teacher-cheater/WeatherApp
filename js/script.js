@@ -11,11 +11,17 @@ if (navigator.geolocation) {
          //здесь должно открываться окно браузера с просьбой разрешить определение местоположения  
          getCityByIp()
             .then((regionCity) => {
-               console.log(regionCity)
                getWeatherByCity(regionCity)//вызвали фукнцию и передали город
-                  .then((f) => {
-                     console.log(f)
+                  .then((showName) => {
+                     const showDataDescription = showName.weather[0].description
+                     const showDataName = showName.name
+                     const showTempWeather = Math.round(showName.main.temp) - 273 + '℃'
+                     //const showDataIcon = showName.weather[0].icon
+                     //const showDataIcon = `<img src="https://openweathermap.org/img/wn/${showName.weather[0].icon}@2x.png">`
+                     reDrawBlockWeath(showDataName, showDataDescription, showTempWeather)
+                     //reDrawBlockWeath(showName)
                   })
+                  .then(() => document.querySelector('.main__change').addEventListener('click', () => { console.log('hh') }))//кнопка для смены города)
             })
       }
    );
@@ -36,7 +42,7 @@ async function getGeoPositionCity(lat, lon) {//получили данные ч�
 }
 
 //найти город
-async function getWeatherByCity(city) {
+async function getWeatherByCity(city) {//получить название поля и вернуть погоды
    return await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b4916a6763c5e891c385a81e2e8bfd91`)
       .then((resp) => resp.json())
       .then((data) => {
@@ -51,8 +57,6 @@ async function getCityByIp() {
          return data.location.region
       })
 }
-//document.querySelector('.main__change').addEventListener('click', () => { console.log('hh') })//кнопка для смены города
-
 
 function drawBlockWeather(temper, description, img, city) {
    //секция main__weather 
@@ -66,22 +70,17 @@ function drawBlockWeather(temper, description, img, city) {
 
    let imgWeather = document.createElement('div')//создание и вывод картинки погоды
    imgWeather.classList = 'main__icon'
-   let btnChange = document.createElement('button')
-   btnChange.classList = 'main__change'
-   btnChange.textContent = 'Change city'
-   //добавление в DOM
-   document.querySelector('.main__weather').prepend(divCity)
-   document.querySelector('.main__weather').prepend(divDegrees)
-   document.querySelector('.main__weather').prepend(titleH2)
-   document.querySelector('.main__weather').prepend(imgWeather)
-   document.querySelector('.main__weather').append(btnChange)
 
+   //добавление в DOM
+   document.querySelector('.main__weather').append(divCity)
+   document.querySelector('.main__weather').prepend(divDegrees)
+   document.querySelector('.main__weather').append(titleH2)
+   document.querySelector('.main__weather').append(imgWeather)
    //
    document.querySelector('.main__degrees').textContent = temper
    document.querySelector('.main__city').textContent = city
    document.querySelector('.main__icon').innerHTML = img
    document.querySelector('.main__description').textContent = description
-   document.querySelector('.main__')
    //секция main__find
    let inptTypeHere = document.createElement('input')
    inptTypeHere.classList = 'main__input'
@@ -89,11 +88,29 @@ function drawBlockWeather(temper, description, img, city) {
    document.querySelector('.main__find').prepend(inptTypeHere)
 }
 
+function reDrawBlockWeath(city, description, temperat) {
+   let textShowNameCity = document.createElement('h2')
+   textShowNameCity.classList = 'main__re-name'
+   document.querySelector('.main__weather').append(textShowNameCity)
+   textShowNameCity.textContent = city
 
-function redrawingBlock(city) {
+   let showDescription = document.createElement('div')
+   showDescription.classList = 'main__re-description'
+   document.querySelector('.main__weather').append(showDescription)
+   showDescription.textContent = description
 
-   //weather[0].description.icon
-   //weather[0].description
+   let showDegrees = document.createElement('div')//создание и вывод temp
+   showDegrees.classList = 'main__re-temp'
+   document.querySelector('.main__weather').append(showDegrees)
+   showDegrees.textContent = temperat
+   //let showIcon = document.createElement('div')
+   //showIcon.classList = 'main__re-icon'
+   //document.querySelector('.main__weather').append(showIcon)
+   //showIcon.textContent = icons
+
+   let btnChange = document.createElement('button')
+   btnChange.classList = 'main__change'
+   btnChange.textContent = 'Change city'
+   document.querySelector('.main__weather').append(btnChange)
 }
-
 
