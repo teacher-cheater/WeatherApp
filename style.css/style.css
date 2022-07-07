@@ -4,9 +4,6 @@ body{
    flex-direction: column;
 }
 
-.header {
-
-}
 .header__title {
    text-align: center;
    padding: 40px;
@@ -22,8 +19,7 @@ body{
    font-weight: 400;
    color: #FFFFFF;
 }
-.main__wrapper {
-}
+
 .main__find {
    max-width: 200px;
    margin: 0 auto;
@@ -35,9 +31,6 @@ body{
    color: rgba(255, 255, 255, 0.7);
    margin-bottom: 40px;
    
-}
-.main__weather {
-
 }
 
 /* стили городов */
@@ -67,8 +60,6 @@ body{
 .main__icon, .main__re-icon{
    font-size: 40px;
 }
-.main__error {
-}
 .main__oops {
    font-size: 20px;
    line-height: 1.8;
@@ -90,9 +81,6 @@ body{
    padding: 40px 0;
 }
 /* buttons */
-.main__find{
-
-}
 .main__change{
    font-size: 17px;
    line-height: 1.65;
@@ -102,8 +90,7 @@ body{
    cursor: pointer;
    margin-bottom: 10px;
 }
-.main__try{
-}
+
 /* общий стиль кнопок */
 .btn{
    background: #FFFFFF;
@@ -115,13 +102,7 @@ body{
    cursor: pointer;
 }
 /* всплывающий input */
-/*#main__inpt-id{
-   display: flex;
-   margin: 0 auto;
-   max-width: 220px;
-   padding: 10px 8px;
-   border-radius: 8px;
-}*/
+
 .main__input{
    display: none;
    /*display: flex;*/

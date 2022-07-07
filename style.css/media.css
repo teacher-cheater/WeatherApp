@@ -1,0 +1,71 @@
+
+@media (max-width: 543.98px) {
+   .header__title {
+      padding: 20px;
+      font-weight: 300;
+      font-size: 18px;
+      margin-bottom: 140px;
+   }  
+   .main__city-here {
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 18px;
+   }
+   
+   /* стили городов */
+   .main__city {
+      font-size: 24px;
+      font-weight: 500;
+   }
+   
+   /* стили вывода описания погоды */
+   .main__description {
+      margin-bottom: 10px;
+   }
+   
+   /* стили вывода погоды в градусах */
+   .main__degrees{
+      font-weight: 600;
+      font-size: 18px;
+   }
+   .main__icon{
+      font-size: 30px;
+   }
+   .main__oops {
+      font-size: 18px;
+      line-height: 1.6;
+   }
+   .main__text {
+      margin-bottom: 35px;
+   }
+   .footer {
+      font-size: 18px;
+      line-height: 1.5;
+      padding: 20px 0;
+   }
+   /* buttons */
+   .main__change{
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+   }
+   
+   /* общий стиль кнопок */
+   .btn{
+      border-radius: 6px;
+      font-size: 16px;
+      line-height: 1.2;
+      color: #4C01E0;
+      padding: 6px 30px;
+      cursor: pointer;
+   }
+   /* всплывающий input */
+   .main__input{
+      display: none;
+      margin: 0 auto;
+      max-width: 280px;
+      padding: 8px 6px;
+      border-radius: 6px;
+      font-size: 14px;
+   }
+}
