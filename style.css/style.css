@@ -51,20 +51,20 @@ body{
 /* стили вывода описания погоды */
 .main__description,.main__re-description {
    text-transform: uppercase;
-   font-size: 34px;
-   line-height: 1.5;
+   font-size: 14px;
+   line-height: 1.2;
    color: rgba(255, 255, 255, 0.8);
-   margin-bottom: 36px;
+   margin-bottom: 16px;
 }
 
 /* стили вывода погоды в градусах */
 .main__re-temp, .main__degrees{
    font-weight: 700;
-   font-size: 72px;
+   font-size: 24px;
    line-height: 1.2;
    color: #FFFFFF;
 }
-.main__re-icon{
+.main__icon, .main__re-icon{
    font-size: 40px;
 }
 .main__error {
@@ -100,17 +100,34 @@ body{
    color: rgba(255, 255, 255, 0.5);
    background: inherit;
    cursor: pointer;
+   margin-bottom: 10px;
 }
 .main__try{
-
 }
 /* общий стиль кнопок */
 .btn{
    background: #FFFFFF;
    border-radius: 8px;
    font-size: 20px;
-   line-height: 1.8;
+   line-height: 1.4;
    color: #4C01E0;
    padding: 7px 50px;
    cursor: pointer;
+}
+/* всплывающий input */
+/*#main__inpt-id{
+   display: flex;
+   margin: 0 auto;
+   max-width: 220px;
+   padding: 10px 8px;
+   border-radius: 8px;
+}*/
+.main__input{
+   display: none;
+   /*display: flex;*/
+   margin: 0 auto;
+   max-width: 280px;
+   padding: 10px 8px;
+   border-radius: 8px;
+   font-size: 16px;
 }
