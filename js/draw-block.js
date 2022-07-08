@@ -38,4 +38,15 @@ export function drawBlockWeather(temper, description, city, img, inpt) {
    document.querySelector('.main__weather').append(inputChangeByCity)
    inputChangeByCity.textContent = inpt
    inputChangeByCity.type = 'text'
+
+   //отрисовка ошибки
+   let divTextByError = document.createElement('p')
+   divTextByError.classList = 'main__error'
+   divTextByError.textContent = 'Ooops. Something went wrong.'
+   let btnTryAgain = document.createElement('button')
+   btnTryAgain.classList = 'main__btn-again'
+   btnTryAgain.textContent = 'Try again'
+   document.querySelector('.main__error').append(divTextByError)
+   document.querySelector('.main__error').append(btnTryAgain)
+
 }

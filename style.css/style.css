@@ -6,15 +6,14 @@ body{
 
 .header__title {
    text-align: center;
-   padding: 40px;
+   padding: 25px;
    font-weight: 300;
    font-size: 28px;
    line-height: 1.2;
    color: rgba(255, 255, 255, 0.5);
-   margin-bottom: 344px;
+   margin-bottom: 300px;
 }  
 .main {
-   /*margin: 0 auto;*/
    text-align: center;
    font-weight: 400;
    color: #FFFFFF;
@@ -29,20 +28,18 @@ body{
    font-size: 20px;
    line-height: 1.8;
    color: rgba(255, 255, 255, 0.7);
-   margin-bottom: 40px;
-   
+   /*margin-bottom: 30px;*/
 }
 
 /* стили городов */
-.main__city, .main__re-name {
+.main__city{
    font-weight: 700;
-   font-size: 72px;
+   font-size: 60px;
    line-height: 1.2;
-   font-weight: 700;
 }
 
 /* стили вывода описания погоды */
-.main__description,.main__re-description {
+.main__description {
    text-transform: uppercase;
    font-size: 14px;
    line-height: 1.2;
@@ -51,18 +48,16 @@ body{
 }
 
 /* стили вывода погоды в градусах */
-.main__re-temp, .main__degrees{
+.main__degrees{
    font-weight: 700;
-   font-size: 24px;
-   line-height: 1.2;
+   font-size: 40px;
+   line-height: 1.4;
    color: #FFFFFF;
 }
-.main__icon, .main__re-icon{
-   font-size: 40px;
-}
+
 .main__oops {
    font-size: 20px;
-   line-height: 1.8;
+   line-height: 1.4;
 }
 .main__text {
    font-weight: 400;
@@ -70,15 +65,15 @@ body{
    line-height: 1.25;
    text-align: center;
    color: rgba(255, 255, 255, 0.75);
-   margin-bottom: 70px;
+   margin-bottom: 40px;
 }
 .footer {
    margin: 0 auto;
    font-weight: 400;
    font-size: 21px;
-   line-height: 1.71;
+   line-height: 1.4;
    color: rgba(255, 255, 255, 0.5);
-   padding: 40px 0;
+   padding: 20px 0;
 }
 /* buttons */
 .main__change{
@@ -93,6 +88,31 @@ body{
 
 /* общий стиль кнопок */
 .btn{
+
+}
+/* всплывающий input */
+
+.main__input{
+   display: none;
+   margin: 0 auto;
+   max-width: 280px;
+   padding: 10px 8px;
+   border-radius: 8px;
+   font-size: 16px;
+}
+
+/* стили для блока-ошибки */
+.main__error{
+   display: none;
+}
+/* надпись */
+.main__error{
+   font-size: 20px;
+   line-height: 1.8;
+   text-align: center;
+}
+/* кнопка */
+.main__btn-again{
    background: #FFFFFF;
    border-radius: 8px;
    font-size: 20px;
@@ -100,15 +120,4 @@ body{
    color: #4C01E0;
    padding: 7px 50px;
    cursor: pointer;
-}
-/* всплывающий input */
-
-.main__input{
-   display: none;
-   /*display: flex;*/
-   margin: 0 auto;
-   max-width: 280px;
-   padding: 10px 8px;
-   border-radius: 8px;
-   font-size: 16px;
 }

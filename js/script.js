@@ -9,6 +9,9 @@ if (navigator.geolocation) {
          let lonPos = position.coords.longitude
          getGeoPositionCity(latPos, lonPos)
       },
+      //if(data.code !== 200){
+      //messageError()
+      //} else{}
       function () {
          //здесь должно открываться окно браузера с просьбой разрешить определение местоположения  
          getCityByIp()
