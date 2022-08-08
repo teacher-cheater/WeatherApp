@@ -2,16 +2,16 @@
 //функция отрисовки вывода
 export function drawBlockWeather(temper, description, city, img, inpt) {
    //секция main__weather 
-   let titleH2 = document.createElement('h2')//создание и вывод темпертуры
+   const titleH2 = document.createElement('h2')//создание и вывод темпертуры
    titleH2.classList = 'main__description'
    titleH2.textContent = temper
-   let divCity = document.createElement('h2')//создание и вывод города
+   const divCity = document.createElement('h2')//создание и вывод города
    divCity.classList = 'main__degrees'
-   let divDegrees = document.createElement('div')//создание и вывод temp
+   const divDegrees = document.createElement('div')//создание и вывод temp
    divDegrees.classList = 'main__city'
-   let imgWeather = document.createElement('div')//создание и вывод картинки погоды
+   const imgWeather = document.createElement('div')//создание и вывод картинки погоды
    imgWeather.classList = 'main__icon'
-   let inptTypeHere = document.createElement('input')//создание и вывод input
+   const inptTypeHere = document.createElement('input')//создание и вывод input
    inptTypeHere.classList = 'main__input'
    //добавление в DOM
    document.querySelector('.main__weather').append(divCity)
@@ -25,14 +25,16 @@ export function drawBlockWeather(temper, description, city, img, inpt) {
    document.querySelector('.main__icon').innerHTML = img
    document.querySelector('.main__description').textContent = description
 
-   let btnChanges = document.createElement('button')//кнопка изменения города
+   const btnChanges = document.createElement('button')//кнопка изменения города
    btnChanges.classList = 'main__change'
+   btnChanges.classList.add('active')
    btnChanges.textContent = 'Change city'
    btnChanges.type = 'button'
    document.querySelector('.main__weather').append(btnChanges)
 
+
    //input для ввода города
-   let inputChangeByCity = document.createElement('input')
+   const inputChangeByCity = document.createElement('input')
    inputChangeByCity.id = 'main__inpt-id'
    inputChangeByCity.classList = 'main__input'
    document.querySelector('.main__weather').append(inputChangeByCity)
@@ -40,13 +42,17 @@ export function drawBlockWeather(temper, description, city, img, inpt) {
    inputChangeByCity.type = 'text'
 
    //отрисовка ошибки
-   let divTextByError = document.createElement('p')
-   divTextByError.classList = 'main__error'
+   const divTextByError = document.createElement('p')
+   divTextByError.classList = 'main__error-text'
    divTextByError.textContent = 'Ooops. Something went wrong.'
-   let btnTryAgain = document.createElement('button')
+   const btnTryAgain = document.createElement('button')
    btnTryAgain.classList = 'main__btn-again'
    btnTryAgain.textContent = 'Try again'
    document.querySelector('.main__error').append(divTextByError)
    document.querySelector('.main__error').append(btnTryAgain)
-
 }
+
+//
+//document.querySelector('.main__error').classList.remove('displ-del')
+//
+//document.querySelector('.main__weather').classList.remove('displ-del')

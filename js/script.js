@@ -9,21 +9,18 @@ if (navigator.geolocation) {
          let lonPos = position.coords.longitude
          getGeoPositionCity(latPos, lonPos)
       },
-      //if(data.code !== 200){
-      //messageError()
-      //} else{}
       function () {
          //здесь должно открываться окно браузера с просьбой разрешить определение местоположения  
          getCityByIp()
             .then((regionCity) => {
                getWeatherByCity(regionCity)//вызвали фукнцию и передали город
-                  .then(() => document.querySelector('.main__change').addEventListener('click', () => document.getElementById('main__inpt-id').style.display = 'flex'))//кнопка для смены города)
+                  .then(() => document.querySelector('.active').style.display = 'flex')//показать кнопку "change city"
+                  .then(() => document.querySelector('.main__change').addEventListener('click', () => document.getElementById('main__inpt-id').style.display = 'flex'))//кнопка для смены города
                   .then(() => document.getElementById('main__inpt-id').addEventListener("change", () => {
                      getWeatherByCity(event.target.value)
                   }))//получение input и вывод города
             })
-      }
-   );
+      });
 }
 
 export async function getGeoPositionCity(lat, lon) {//получили данные через переменные из getCurrentPosition
@@ -43,20 +40,26 @@ export async function getWeatherByCity(city) {//получить названи�
    return await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b4916a6763c5e891c385a81e2e8bfd91`)
       .then((resp) => resp.json())
       .then((data) => {
+
          const showDataDescription = data.weather[0].description
          const showDataName = data.name
          const showTempWeather = Math.round(data.main.temp) - 273 + '℃'
          const showDataIcon = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">`
          document.querySelector('.main__weather').textContent = ''
          drawBlockWeather(showTempWeather, showDataDescription, showDataName, showDataIcon)
+
+         document.querySelector('.main__error').classList.add('displ-del')
+
          return data
       })
 }
-
+//at_LAUTAKjU0b9kb9RgBSULEp73rWTNq
+//at_oI4JbCU9ZemAS6KTTdDewKQuB1ce9
 export async function getCityByIp() {
    return await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_oI4JbCU9ZemAS6KTTdDewKQuB1ce9`)
       .then((resp) => resp.json())
       .then((data) => {
+
          return data.location.region
       })
 }
