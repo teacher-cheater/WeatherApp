@@ -5,14 +5,19 @@ export function drawBlockWeather(temper, description, city, img, inpt) {
    const titleH2 = document.createElement('h2')//создание и вывод темпертуры
    titleH2.classList = 'main__description'
    titleH2.textContent = temper
+
    const divCity = document.createElement('h2')//создание и вывод города
    divCity.classList = 'main__degrees'
+
    const divDegrees = document.createElement('div')//создание и вывод temp
    divDegrees.classList = 'main__city'
+
    const imgWeather = document.createElement('div')//создание и вывод картинки погоды
    imgWeather.classList = 'main__icon'
+
    const inptTypeHere = document.createElement('input')//создание и вывод input
    inptTypeHere.classList = 'main__input'
+
    //добавление в DOM
    document.querySelector('.main__weather').append(divCity)
    document.querySelector('.main__weather').prepend(divDegrees)
@@ -51,8 +56,3 @@ export function drawBlockWeather(temper, description, city, img, inpt) {
    document.querySelector('.main__error').append(divTextByError)
    document.querySelector('.main__error').append(btnTryAgain)
 }
-
-//
-//document.querySelector('.main__error').classList.remove('displ-del')
-//
-//document.querySelector('.main__weather').classList.remove('displ-del')
