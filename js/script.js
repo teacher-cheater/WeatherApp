@@ -53,8 +53,7 @@ export async function getWeatherByCity(city) {//получить названи�
          return data
       })
 }
-//at_UniXayB0JL7H6kd3XNohsWcIkQ6uh
-//at_oI4JbCU9ZemAS6KTTdDewKQuB1ce9
+
 export async function getCityByIp() {
    return await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_oI4JbCU9ZemAS6KTTdDewKQuB1ce9`)
       .then((resp) => resp.json())

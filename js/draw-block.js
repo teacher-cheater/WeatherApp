@@ -37,7 +37,6 @@ export function drawBlockWeather(temper, description, city, img, inpt) {
    btnChanges.type = 'button'
    document.querySelector('.main__weather').append(btnChanges)
 
-
    //input для ввода города
    const inputChangeByCity = document.createElement('input')
    inputChangeByCity.id = 'main__inpt-id'

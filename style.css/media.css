@@ -1,23 +1,19 @@
 @media (max-width: 543.98px) {
-   body {
-      /*height: 100%;*/
-   }
    .header__title {
       padding: 20px;
       font-weight: 300;
       font-size: 18px;
-      margin-bottom: 140px;
+      margin-bottom: 100px;
    }
    .main__city-here {
       font-size: 16px;
-      line-height: 1.4;
+      line-height: 1;
       margin-bottom: 18px;
    }
 
    /* стили городов */
    .main__city {
       font-size: 24px;
-      font-weight: 500;
    }
 
    /* стили вывода описания погоды */
@@ -47,14 +43,14 @@
 
    .footer {
       font-size: 18px;
-      line-height: 1.5;
+      line-height: 1;
       padding: 20px 0;
    }
 
    /* buttons */
    .main__change {
       font-size: 15px;
-      line-height: 1.5;
+      line-height: 1;
       margin-bottom: 8px;
    }
 

@@ -1,6 +1,7 @@
 @charset "UTF-8";
-
+@import url("https://fonts.googleapis.com/css?family=Inter:regular,500,600,700,800,900@display=swap");
 .wrapper {
+      font-family: "Inter";
       overflow: hidden;
       min-height: 100%;
       display: -webkit-box;
