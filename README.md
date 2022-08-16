@@ -4,7 +4,7 @@
 Если пользователь не предоставил доступ к геолокации, тогда приложение выводит данные по городу. 
 В поисковой строке можно ввести любой город и посмтреть погоду. Получение данных о погоде приходит по API.
 
-Посмотреть онлайн (https://teacher-cheater.github.io/WeatherApp/)
+[Посмотреть онлайн](https://teacher-cheater.github.io/WeatherApp/)
 
 ![2022-08-16_01-24-44](https://user-images.githubusercontent.com/85887160/184732001-8f97a7dd-64bb-4387-9fac-a5965f4c9b0f.png)
 ![2022-08-16_01-27-27](https://user-images.githubusercontent.com/85887160/184732010-faa0bd04-7dea-4b8b-b5d1-ecbf4ba28ccc.png)
